@@ -59,6 +59,6 @@ go build -o server.exe main.go
 
 cd ./server
 
-go build -o client main.go
+go build -o client.exe main.go
 
-./client
+./client.exe
