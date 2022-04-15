@@ -3,6 +3,7 @@ package logic
 import (
 	"bufio"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net"
 	"os"
@@ -66,7 +67,7 @@ func (c *Client) connRead() {
 			}
 			content += baseMsg.Content
 
-			log.Println(content)
+			fmt.Println(content)
 		}
 	}
 }
@@ -88,10 +89,10 @@ func (c *Client) connWrite() {
 
 func (c *Client) ReadStdin() {
 	// 用户教程
-	log.Printf("use \"/name xxx\" to login")
-	log.Printf("use \"/room num\" to choose room, room num 0 - 9")
-	log.Printf("use \"/stats name\" to show user info")
-	log.Printf("use \"/popular roomNum\" to get most popular word in 10 min, room num 0 - 9")
+	fmt.Println("1.use \"/name xxx\" to login")
+	fmt.Println("2.use \"/room num\" to choose room, room num 0 - 9")
+	fmt.Println("3.use \"/stats name\" to show user info")
+	fmt.Println("4.use \"/popular roomNum\" to get most popular word in 10 min, room num 0 - 9")
 
 	reader := bufio.NewReader(os.Stdin)
 	for {
