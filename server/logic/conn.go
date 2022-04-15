@@ -3,7 +3,6 @@ package logic
 import (
 	"encoding/json"
 	"fmt"
-	"io"
 	"log"
 	"net"
 )
@@ -110,7 +109,7 @@ func (uc *UserConn) connRead() {
 	for {
 		n, err := uc.conn.Read(buffer)
 		// 如果报错，做回收处理
-		if err != nil && err != io.EOF {
+		if err != nil {
 			log.Printf("conn %d read buffer err %s", uc.ConnID, err.Error())
 
 			// 通知下线
