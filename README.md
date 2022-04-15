@@ -62,3 +62,22 @@ cd ./server
 go build -o client.exe main.go
 
 ./client.exe
+
+# 使用
+
+命令：
+
+/name xxx 建号或者登录
+
+/room num 选择聊天房间0-9
+
+/stats xxx 某用户的状态
+
+/popular num 某个房间（0-9）十分钟内出现频率最大的词
+
+流程：
+
+1.启动server
+
+2.启动client，必须先执行/name进行登录，/room选择聊天房间方可进行聊天，否则聊天无效
+
